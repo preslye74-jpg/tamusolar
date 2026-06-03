@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Lato:wght@300;400&family=Cormorant+Garamond:ital@1&display=swap');
+
+  :root {
+    --maroon: #500000;
+    --cream: #FCF3EC;
+    --dusty-rose: #CCB1B2;
+    --black: #000000;
+    --white: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'League Spartan', sans-serif;
+    background: var(--cream);
+    position: relative;
+  }
+
+  .accent-bar {
+    position: absolute;
+    left: 0; top: 0;
+    width: 9px; height: 100%;
+    background: var(--maroon);
+    z-index: 10;
+  }
+
+  /* Top label */
+  .section-label {
+    position: absolute;
+    top: 72px;
+    left: 56px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--maroon);
+  }
+
+  /* Main spec — number bleeds right */
+  .main-spec-number {
+    position: absolute;
+    top: 148px;
+    left: 48px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 310px;
+    line-height: 0.85;
+    color: var(--black);
+    letter-spacing: -8px;
+    /* allow bleed */
+    white-space: nowrap;
+  }
+
+  .main-spec-unit {
+    position: absolute;
+    top: 152px;
+    right: 52px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 52px;
+    color: var(--maroon);
+    letter-spacing: 0.02em;
+    text-align: right;
+    line-height: 1.1;
+  }
+
+  .main-spec-label {
+    position: absolute;
+    top: 570px;
+    left: 56px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 36px;
+    color: var(--maroon);
+    letter-spacing: 0.04em;
+  }
+
+  /* Diagonal slash — lower section */
+  .slash-block {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 620px;
+    background: var(--maroon);
+    clip-path: polygon(0 18%, 100% 0, 100% 100%, 0 100%);
+    z-index: 2;
+  }
+
+  /* Secondary specs grid */
+  .specs-grid {
+    position: absolute;
+    bottom: 88px;
+    left: 56px;
+    right: 52px;
+    z-index: 5;
+    display: flex;
+    gap: 0;
+  }
+
+  .spec-item {
+    flex: 1;
+    padding-right: 28px;
+    border-right: 1px solid rgba(252, 243, 236, 0.2);
+    padding-left: 28px;
+  }
+
+  .spec-item:first-child {
+    padding-left: 0;
+  }
+
+  .spec-item:last-child {
+    border-right: none;
+  }
+
+  .spec-item .spec-val {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 52px;
+    color: var(--cream);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .spec-item .spec-key {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-top: 8px;
+  }
+
+  /* Mid section label */
+  .mid-label {
+    position: absolute;
+    bottom: 290px;
+    left: 56px;
+    z-index: 5;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(252, 243, 236, 0.5);
+  }
+
+  /* Divider line */
+  .divider {
+    position: absolute;
+    bottom: 262px;
+    left: 56px;
+    right: 52px;
+    height: 1px;
+    background: rgba(252, 243, 236, 0.15);
+    z-index: 5;
+  }
+
+  /* Team tag */
+  .team-tag {
+    position: absolute;
+    top: 72px;
+    right: 52px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(80, 0, 0, 0.4);
+  }
+
+  /* Sun watermark top-right cream area */
+  .sun-watermark {
+    position: absolute;
+    top: 320px;
+    right: -40px;
+    width: 340px;
+    height: 340px;
+    opacity: 0.045;
+    z-index: 1;
+  }
+
+  .sun-watermark svg { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+
+  <div class="accent-bar"></div>
+
+  <div class="section-label">Tech Spec · [ CAR NAME / SYSTEM ]</div>
+  <div class="team-tag">TAMU Solar · 2026</div>
+
+  <div class="main-spec-number">[ NUM ]</div>
+  <div class="main-spec-unit">[ UNIT ]<br><span style="font-size:28px;font-weight:300;color:#888;">[ sub unit ]</span></div>
+  <div class="main-spec-label">[ Spec Name — what this number means ]</div>
+
+  <div class="slash-block"></div>
+
+  <div class="mid-label">By the numbers · [ system ]</div>
+  <div class="divider"></div>
+
+  <div class="specs-grid">
+    <div class="spec-item">
+      <div class="spec-val">[ VAL ]</div>
+      <div class="spec-key">[ Spec Label ]</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-val">[ VAL ]</div>
+      <div class="spec-key">[ Spec Label ]</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-val">[ VAL ]</div>
+      <div class="spec-key">[ Spec Label ]</div>
+    </div>
+  </div>
+
+  <div class="sun-watermark">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="42" fill="black"/>
+      <line x1="100" y1="10" x2="100" y2="40" stroke="black" stroke-width="8" stroke-linecap="round"/>
+      <line x1="100" y1="160" x2="100" y2="190" stroke="black" stroke-width="8" stroke-linecap="round"/>
+      <line x1="10" y1="100" x2="40" y2="100" stroke="black" stroke-width="8" stroke-linecap="round"/>
+      <line x1="160" y1="100" x2="190" y2="100" stroke="black" stroke-width="8" stroke-linecap="round"/>
+      <line x1="29" y1="29" x2="50" y2="50" stroke="black" stroke-width="8" stroke-linecap="round"/>
+      <line x1="150" y1="150" x2="171" y2="171" stroke="black" stroke-width="8" stroke-linecap="round"/>
+      <line x1="171" y1="29" x2="150" y2="50" stroke="black" stroke-width="8" stroke-linecap="round"/>
+      <line x1="29" y1="171" x2="50" y2="150" stroke="black" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+</body>
+</html>

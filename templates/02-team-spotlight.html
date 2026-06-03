@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Lato:wght@300;400&family=Cormorant+Garamond:ital@1&display=swap');
+
+  :root {
+    --maroon: #500000;
+    --cream: #FCF3EC;
+    --dusty-rose: #CCB1B2;
+    --black: #000000;
+    --white: #FFFFFF;
+    --accent-bar: #500000;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'League Spartan', sans-serif;
+    background: var(--black);
+    position: relative;
+  }
+
+  /* Left accent bar */
+  .accent-bar {
+    position: absolute;
+    left: 0; top: 0;
+    width: 9px; height: 100%;
+    background: var(--accent-bar);
+    z-index: 10;
+  }
+
+  /* Photo zone — top-left 60% of width, full height with slight inset bottom */
+  .photo-zone {
+    position: absolute;
+    left: 9px; top: 0;
+    width: 648px; height: 1350px;
+    background: #1a1a1a;
+    overflow: hidden;
+  }
+
+  .photo-zone .photo-label {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #444;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* B&W overlay tint */
+  .photo-zone::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 55%, rgba(0,0,0,0.7) 100%);
+  }
+
+  /* Diagonal slash */
+  .slash {
+    position: absolute;
+    top: 0;
+    left: 580px;
+    width: 130px;
+    height: 1350px;
+    background: var(--maroon);
+    clip-path: polygon(50% 0, 100% 0, 50% 100%, 0% 100%);
+    z-index: 3;
+  }
+
+  /* Right panel */
+  .right-panel {
+    position: absolute;
+    right: 0; top: 0;
+    width: 432px; height: 1350px;
+    background: var(--maroon);
+    z-index: 2;
+  }
+
+  /* Role badge */
+  .role-badge {
+    position: absolute;
+    top: 88px;
+    right: 52px;
+    background: var(--cream);
+    padding: 8px 18px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--maroon);
+  }
+
+  /* Name — huge, left-bleeding off the panel */
+  .name {
+    position: absolute;
+    top: 38%;
+    right: -30px;
+    width: 560px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 108px;
+    line-height: 0.88;
+    color: var(--white);
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    z-index: 8;
+  }
+
+  /* Subname / first name smaller above */
+  .firstname {
+    position: absolute;
+    top: 31%;
+    right: 52px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    color: var(--dusty-rose);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    z-index: 8;
+  }
+
+  /* Role descriptor */
+  .role-title {
+    position: absolute;
+    top: 62%;
+    right: 52px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 34px;
+    color: var(--cream);
+    line-height: 1.3;
+    text-align: right;
+    z-index: 8;
+    max-width: 340px;
+  }
+
+  /* Stats row */
+  .stats {
+    position: absolute;
+    bottom: 180px;
+    right: 52px;
+    z-index: 8;
+    text-align: right;
+  }
+
+  .stats .stat-line {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    color: var(--dusty-rose);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .stats .stat-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--dusty-rose);
+    margin: 14px 0 14px auto;
+    opacity: 0.5;
+  }
+
+  /* Team tag bottom */
+  .team-tag {
+    position: absolute;
+    bottom: 62px;
+    right: 52px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(252, 243, 236, 0.45);
+    z-index: 8;
+  }
+
+  /* Sun watermark */
+  .sun-watermark {
+    position: absolute;
+    bottom: -60px;
+    left: 20px;
+    width: 280px;
+    height: 280px;
+    opacity: 0.04;
+    z-index: 1;
+  }
+
+  .sun-watermark svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Year tag top-left */
+  .year-tag {
+    position: absolute;
+    top: 62px;
+    left: 42px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(252, 243, 236, 0.5);
+    z-index: 12;
+  }
+</style>
+</head>
+<body>
+
+  <div class="accent-bar"></div>
+
+  <div class="photo-zone">
+    <span class="photo-label">[ PHOTO ]</span>
+  </div>
+
+  <div class="slash"></div>
+
+  <div class="right-panel"></div>
+
+  <!-- Overlaid elements (z-index above everything) -->
+  <div class="year-tag">TAMU Solar · 2026</div>
+
+  <div class="role-badge">[ ROLE ]</div>
+
+  <div class="firstname">[ FIRST NAME ]</div>
+  <div class="name">[ LAST<br>NAME ]</div>
+
+  <div class="role-title">[ Role Title ]<br><span style="font-size:22px;letter-spacing:0.08em;font-family:'Lato',sans-serif;font-style:normal;font-weight:300;">[ Department / Sub-team ]</span></div>
+
+  <div class="stats">
+    <div class="stat-line">[ YEAR ] · [ Major ]</div>
+    <div class="stat-divider"></div>
+    <div class="stat-line">[ Stat or fun fact ]</div>
+  </div>
+
+  <div class="team-tag">Texas A&amp;M Solar Car Racing</div>
+
+  <!-- Sun watermark SVG -->
+  <div class="sun-watermark">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="42" fill="white"/>
+      <line x1="100" y1="10" x2="100" y2="40" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="100" y1="160" x2="100" y2="190" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="10" y1="100" x2="40" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="160" y1="100" x2="190" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="29" y1="29" x2="50" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="150" y1="150" x2="171" y2="171" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="171" y1="29" x2="150" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="29" y1="171" x2="50" y2="150" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+</body>
+</html>

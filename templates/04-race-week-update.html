@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Lato:wght@300;400&family=Cormorant+Garamond:ital@1&display=swap');
+
+  :root {
+    --maroon: #500000;
+    --cream: #FCF3EC;
+    --dusty-rose: #CCB1B2;
+    --black: #000000;
+    --white: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'League Spartan', sans-serif;
+    background: var(--black);
+    position: relative;
+  }
+
+  .accent-bar {
+    position: absolute;
+    left: 0; top: 0;
+    width: 9px; height: 100%;
+    background: var(--maroon);
+    z-index: 10;
+  }
+
+  /* Live badge top */
+  .live-badge {
+    position: absolute;
+    top: 68px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .live-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #ff3b30;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .live-text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #ff3b30;
+  }
+
+  /* Race week badge pill */
+  .race-week-pill {
+    position: absolute;
+    top: 56px;
+    right: 52px;
+    background: var(--maroon);
+    padding: 10px 22px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  /* Day indicator */
+  .day-indicator {
+    position: absolute;
+    top: 155px;
+    left: 50px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+  }
+
+  /* Main status line */
+  .main-status {
+    position: absolute;
+    top: 210px;
+    left: 50px;
+    right: 52px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 122px;
+    line-height: 0.87;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: -3px;
+  }
+
+  /* Maroon rule */
+  .maroon-rule {
+    position: absolute;
+    top: 615px;
+    left: 50px;
+    right: 0;
+    height: 4px;
+    background: var(--maroon);
+  }
+
+  /* Sub status */
+  .sub-status {
+    position: absolute;
+    top: 645px;
+    left: 50px;
+    right: 52px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    color: var(--cream);
+    line-height: 1.5;
+  }
+
+  /* Big number — right bleed stat */
+  .bleed-stat {
+    position: absolute;
+    bottom: 240px;
+    right: -20px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 280px;
+    line-height: 1;
+    color: rgba(80, 0, 0, 0.35);
+    letter-spacing: -8px;
+    white-space: nowrap;
+  }
+
+  .bleed-stat-label {
+    position: absolute;
+    bottom: 218px;
+    right: 52px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+  }
+
+  /* Stats row bottom */
+  .stats-row {
+    position: absolute;
+    bottom: 108px;
+    left: 50px;
+    right: 52px;
+    display: flex;
+    gap: 0;
+    border-top: 1px solid rgba(252,243,236,0.12);
+    padding-top: 28px;
+  }
+
+  .stat-block {
+    flex: 1;
+    padding-right: 24px;
+  }
+
+  .stat-block .stat-val {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+
+  .stat-block .stat-key {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(204, 177, 178, 0.7);
+    margin-top: 4px;
+  }
+
+  /* Team tag */
+  .team-tag {
+    position: absolute;
+    bottom: 52px;
+    right: 52px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(252, 243, 236, 0.25);
+  }
+
+  /* Sun watermark */
+  .sun-watermark {
+    position: absolute;
+    top: 50px;
+    right: 160px;
+    width: 220px;
+    height: 220px;
+    opacity: 0.035;
+    z-index: 1;
+  }
+
+  .sun-watermark svg { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+
+  <div class="accent-bar"></div>
+
+  <div class="live-badge">
+    <div class="live-dot"></div>
+    <div class="live-text">Live Update</div>
+  </div>
+
+  <div class="race-week-pill">Race Week</div>
+
+  <div class="day-indicator">Day [ # ] · FSGP 2026</div>
+
+  <div class="main-status">[ STATUS<br>LINE<br>HERE ]</div>
+
+  <div class="maroon-rule"></div>
+
+  <div class="sub-status">[ One-liner update. Location. Time. Short and punchy. ]</div>
+
+  <div class="bleed-stat">[ NUM ]</div>
+  <div class="bleed-stat-label">[ Stat label — mi completed / laps / hrs ]</div>
+
+  <div class="stats-row">
+    <div class="stat-block">
+      <div class="stat-val">[ VAL ]</div>
+      <div class="stat-key">[ Label ]</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-val">[ VAL ]</div>
+      <div class="stat-key">[ Label ]</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-val">[ VAL ]</div>
+      <div class="stat-key">[ Label ]</div>
+    </div>
+  </div>
+
+  <div class="team-tag">Texas A&amp;M Solar Car Racing</div>
+
+  <div class="sun-watermark">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="42" fill="white"/>
+      <line x1="100" y1="10" x2="100" y2="40" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="100" y1="160" x2="100" y2="190" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="10" y1="100" x2="40" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="160" y1="100" x2="190" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="29" y1="29" x2="50" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="150" y1="150" x2="171" y2="171" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="171" y1="29" x2="150" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="29" y1="171" x2="50" y2="150" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+</body>
+</html>

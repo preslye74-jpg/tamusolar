@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Lato:wght@300;400&family=Cormorant+Garamond:ital@1&display=swap');
+
+  :root {
+    --maroon: #500000;
+    --cream: #FCF3EC;
+    --dusty-rose: #CCB1B2;
+    --black: #000000;
+    --white: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'League Spartan', sans-serif;
+    background: var(--black);
+    position: relative;
+  }
+
+  .accent-bar {
+    position: absolute;
+    left: 0; top: 0;
+    width: 9px; height: 100%;
+    background: var(--maroon);
+    z-index: 10;
+  }
+
+  /* Left panel — maroon */
+  .left-panel {
+    position: absolute;
+    left: 9px; top: 0;
+    width: 480px; height: 1350px;
+    background: var(--maroon);
+    z-index: 1;
+  }
+
+  /* Right panel — black (default body) */
+
+  /* Milestone icon/number — center of left panel */
+  .milestone-icon {
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 480px;
+    text-align: center;
+    z-index: 5;
+  }
+
+  .milestone-icon .icon-val {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 160px;
+    line-height: 1;
+    color: var(--cream);
+    letter-spacing: -4px;
+    display: block;
+  }
+
+  .milestone-icon .icon-sub {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(252, 243, 236, 0.45);
+    margin-top: 16px;
+    display: block;
+  }
+
+  /* Diagonal line decoration on left panel */
+  .left-slash-top {
+    position: absolute;
+    top: 0; left: 9px;
+    width: 480px; height: 200px;
+    background: rgba(0,0,0,0.2);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    z-index: 2;
+  }
+
+  .left-slash-bottom {
+    position: absolute;
+    bottom: 0; left: 9px;
+    width: 480px; height: 200px;
+    background: rgba(0,0,0,0.2);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    z-index: 2;
+  }
+
+  /* Right side content */
+  .content-area {
+    position: absolute;
+    left: 520px;
+    top: 0;
+    right: 0;
+    height: 1350px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 52px;
+  }
+
+  .news-label {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 22px;
+  }
+
+  .achievement-title {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 0.92;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    margin-bottom: 32px;
+  }
+
+  .achievement-desc {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.6;
+    color: rgba(252, 243, 236, 0.7);
+    margin-bottom: 48px;
+  }
+
+  .rule {
+    width: 48px;
+    height: 3px;
+    background: var(--maroon);
+    margin-bottom: 32px;
+  }
+
+  .date-line {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* Team tag bottom */
+  .team-tag {
+    position: absolute;
+    bottom: 60px;
+    right: 52px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.22);
+    z-index: 8;
+  }
+
+  /* Top right label */
+  .top-label {
+    position: absolute;
+    top: 68px;
+    right: 52px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    z-index: 8;
+  }
+
+  /* Sun watermark on left panel */
+  .sun-watermark {
+    position: absolute;
+    top: 50%;
+    left: 9px;
+    transform: translateY(-50%);
+    width: 480px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.06;
+    z-index: 3;
+  }
+
+  .sun-watermark svg { width: 380px; height: 380px; }
+</style>
+</head>
+<body>
+
+  <div class="accent-bar"></div>
+  <div class="left-panel"></div>
+  <div class="left-slash-top"></div>
+  <div class="left-slash-bottom"></div>
+
+  <div class="sun-watermark">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="42" fill="white"/>
+      <line x1="100" y1="10" x2="100" y2="40" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="100" y1="160" x2="100" y2="190" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="10" y1="100" x2="40" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="160" y1="100" x2="190" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="29" y1="29" x2="50" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="150" y1="150" x2="171" y2="171" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="171" y1="29" x2="150" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="29" y1="171" x2="50" y2="150" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="milestone-icon">
+    <span class="icon-val">[ 1ST ]</span>
+    <span class="icon-sub">[ Milestone type ]</span>
+  </div>
+
+  <div class="top-label">TAMU Solar · 2026</div>
+
+  <div class="content-area">
+    <div class="news-label">Achievement Unlocked</div>
+    <div class="achievement-title">[ Achievement<br>Name<br>Here ]</div>
+    <div class="achievement-desc">[ One to two sentence description of what happened, what it means. Factual. ]</div>
+    <div class="rule"></div>
+    <div class="date-line">[ Date · Location · Event ]</div>
+  </div>
+
+  <div class="team-tag">Texas A&amp;M Solar Car Racing</div>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Lato:wght@300;400&display=swap');
+
+  :root {
+    --maroon: #500000;
+    --cream: #FCF3EC;
+    --dusty-rose: #CCB1B2;
+    --black: #000000;
+    --white: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'League Spartan', sans-serif;
+    background: #111;
+    position: relative;
+  }
+
+  /* Full-bleed photo zone */
+  .photo-zone {
+    position: absolute;
+    inset: 0;
+    background: #1c1c1c;
+    z-index: 0;
+  }
+
+  .photo-zone .photo-label {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    text-align: center;
+    line-height: 2;
+  }
+
+  /* Bottom dark scrim */
+  .scrim {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 480px;
+    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 55%, transparent 100%);
+    z-index: 2;
+  }
+
+  /* Left accent bar */
+  .accent-bar {
+    position: absolute;
+    left: 0; top: 0;
+    width: 9px; height: 100%;
+    background: var(--maroon);
+    z-index: 10;
+  }
+
+  /* Top badge */
+  .badge {
+    position: absolute;
+    top: 56px;
+    left: 40px;
+    background: var(--maroon);
+    padding: 10px 20px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--white);
+    z-index: 10;
+  }
+
+  /* Date/location top right */
+  .date-tag {
+    position: absolute;
+    top: 62px;
+    right: 46px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    z-index: 10;
+    text-align: right;
+  }
+
+  /* Caption text — bottom overlay */
+  .caption {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    right: 46px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.45;
+    color: var(--white);
+    z-index: 5;
+    letter-spacing: 0.01em;
+  }
+
+  /* Team tag */
+  .team-tag {
+    position: absolute;
+    bottom: 54px;
+    left: 40px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    z-index: 5;
+  }
+
+  /* Sun watermark top-right */
+  .sun-watermark {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 52px;
+    height: 52px;
+    opacity: 0.22;
+    z-index: 10;
+  }
+
+  .sun-watermark svg { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+
+  <div class="photo-zone">
+    <span class="photo-label">[ FULL-BLEED PHOTO ]<br>candid · action · detail · raw</span>
+  </div>
+
+  <div class="scrim"></div>
+  <div class="accent-bar"></div>
+
+  <div class="badge">[ BUILD SEASON / TEST DAY / RACE WEEK ]</div>
+  <div class="date-tag">[ Location ]<br>[ Date ]</div>
+
+  <div class="caption">[ One-line caption. Short. Real. No caption needed if the photo says it. ]</div>
+
+  <div class="team-tag">Texas A&amp;M Solar Car Racing</div>
+
+  <div class="sun-watermark">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="42" fill="white"/>
+      <line x1="100" y1="10" x2="100" y2="40" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="100" y1="160" x2="100" y2="190" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="10" y1="100" x2="40" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="160" y1="100" x2="190" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="29" y1="29" x2="50" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="150" y1="150" x2="171" y2="171" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="171" y1="29" x2="150" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="29" y1="171" x2="50" y2="150" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+</body>
+</html>

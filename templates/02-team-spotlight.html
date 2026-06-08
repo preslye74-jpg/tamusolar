@@ -187,20 +187,41 @@
     z-index: 8;
   }
 
-  /* Sun watermark */
-  .sun-watermark {
+  /* Logo watermark */
+  .logo-watermark {
     position: absolute;
-    bottom: -60px;
-    left: 20px;
-    width: 280px;
-    height: 280px;
-    opacity: 0.04;
+    bottom: -40px;
+    left: -20px;
+    width: 320px;
+    height: 320px;
+    opacity: 0.055;
     z-index: 1;
+    object-fit: contain;
   }
 
-  .sun-watermark svg {
-    width: 100%;
-    height: 100%;
+  /* Logo top-right */
+  .logo-top {
+    position: absolute;
+    top: 52px;
+    right: 52px;
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    opacity: 0.7;
+    z-index: 12;
+  }
+
+  /* Car number */
+  .car-number {
+    position: absolute;
+    top: 50px;
+    left: 42px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    color: rgba(252, 243, 236, 0.35);
+    z-index: 12;
   }
 
   /* Year tag top-left */
@@ -231,6 +252,8 @@
   <div class="right-panel"></div>
 
   <!-- Overlaid elements (z-index above everything) -->
+  <div class="car-number">#12 · EOS</div>
+  <img class="logo-top" src="file:///home/user/tamusolar/assets/logo-white.png" alt="TAMU Solar">
   <div class="year-tag">TAMU Solar · 2026</div>
 
   <div class="role-badge">[ ROLE ]</div>
@@ -248,20 +271,9 @@
 
   <div class="team-tag">Texas A&amp;M Solar Car Racing</div>
 
-  <!-- Sun watermark SVG -->
-  <div class="sun-watermark">
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="42" fill="white"/>
-      <line x1="100" y1="10" x2="100" y2="40" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="100" y1="160" x2="100" y2="190" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="10" y1="100" x2="40" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="160" y1="100" x2="190" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="29" y1="29" x2="50" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="150" y1="150" x2="171" y2="171" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="171" y1="29" x2="150" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="29" y1="171" x2="50" y2="150" stroke="white" stroke-width="8" stroke-linecap="round"/>
-    </svg>
-  </div>
+  <img class="logo-watermark" src="file:///home/user/tamusolar/assets/logo-white.png" alt="">
+
+  <!-- CAPTION: Meet the team behind Eos. #12 on track. ☀️ Introducing [NAME] — [Role]. #TAMUSolar #GigEm -->
 
 </body>
 </html>

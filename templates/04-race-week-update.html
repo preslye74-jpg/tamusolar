@@ -205,18 +205,29 @@
     color: rgba(252, 243, 236, 0.25);
   }
 
-  /* Sun watermark */
-  .sun-watermark {
+  /* Logo watermark */
+  .logo-watermark {
     position: absolute;
-    top: 50px;
-    right: 160px;
-    width: 220px;
-    height: 220px;
-    opacity: 0.035;
+    top: 30px;
+    right: 130px;
+    width: 250px;
+    height: 250px;
+    opacity: 0.04;
     z-index: 1;
+    object-fit: contain;
   }
 
-  .sun-watermark svg { width: 100%; height: 100%; }
+  /* Logo small, sits next to race-week pill */
+  .logo-top {
+    position: absolute;
+    top: 58px;
+    left: 50px;
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    opacity: 0.5;
+    z-index: 12;
+  }
 </style>
 </head>
 <body>
@@ -228,9 +239,10 @@
     <div class="live-text">Live Update</div>
   </div>
 
-  <div class="race-week-pill">Race Week</div>
+  <img class="logo-top" src="file:///home/user/tamusolar/assets/logo-white.png" alt="TAMU Solar">
+  <div class="race-week-pill">Race Week · Eos #12</div>
 
-  <div class="day-indicator">Day [ # ] · FSGP 2026</div>
+  <div class="day-indicator">Day [ # ] · FSGP 2026 · Brainerd, MN</div>
 
   <div class="main-status">[ STATUS<br>LINE<br>HERE ]</div>
 
@@ -258,19 +270,9 @@
 
   <div class="team-tag">Texas A&amp;M Solar Car Racing</div>
 
-  <div class="sun-watermark">
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="42" fill="white"/>
-      <line x1="100" y1="10" x2="100" y2="40" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="100" y1="160" x2="100" y2="190" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="10" y1="100" x2="40" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="160" y1="100" x2="190" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="29" y1="29" x2="50" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="150" y1="150" x2="171" y2="171" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="171" y1="29" x2="150" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="29" y1="171" x2="50" y2="150" stroke="white" stroke-width="8" stroke-linecap="round"/>
-    </svg>
-  </div>
+  <img class="logo-watermark" src="file:///home/user/tamusolar/assets/logo-white.png" alt="">
+
+  <!-- CAPTION: Eos is on track. Day [#] at FSGP. [Miles/laps] down. ⚡ Brainerd International Raceway · #TAMUSolar #FSGP2026 #GigEm -->
 
 </body>
 </html>

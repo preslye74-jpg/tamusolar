@@ -123,18 +123,17 @@
     color: var(--cream);
   }
 
-  /* Sun watermark top-right */
-  .sun-watermark {
+  /* Logo top-right */
+  .logo-top {
     position: absolute;
-    top: 48px;
+    top: 44px;
     right: 44px;
     width: 68px;
     height: 68px;
-    opacity: 0.3;
+    object-fit: contain;
+    opacity: 0.55;
     z-index: 10;
   }
-
-  .sun-watermark svg { width: 100%; height: 100%; }
 
   /* Team name top */
   .team-name {
@@ -171,21 +170,9 @@
   <div class="gradient-overlay"></div>
   <div class="accent-bar"></div>
 
-  <div class="team-name">Texas A&amp;M Solar Car Racing</div>
+  <div class="team-name">Texas A&amp;M Solar Car Racing · Eos #12</div>
 
-  <div class="sun-watermark">
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="42" fill="white"/>
-      <line x1="100" y1="10" x2="100" y2="40" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="100" y1="160" x2="100" y2="190" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="10" y1="100" x2="40" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="160" y1="100" x2="190" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="29" y1="29" x2="50" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="150" y1="150" x2="171" y2="171" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="171" y1="29" x2="150" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="29" y1="171" x2="50" y2="150" stroke="white" stroke-width="8" stroke-linecap="round"/>
-    </svg>
-  </div>
+  <img class="logo-top" src="file:///home/user/tamusolar/assets/logo-white.png" alt="TAMU Solar">
 
   <div class="headline">FSGP<br>2026</div>
   <div class="sub-headline">Brainerd International Raceway</div>
@@ -197,6 +184,8 @@
     <div class="event-line"><strong>ASC</strong> · Jul 25 – Aug 1, 2026</div>
     <div class="event-line">Brainerd, MN</div>
   </div>
+
+  <!-- CAPTION: Eos. Car #12. Brainerd bound. ☀️ FSGP · Jul 21–23 / ASC · Jul 25–Aug 1 · #TAMUSolar #GigEm #FSGP2026 #ASC2026 -->
 
 </body>
 </html>

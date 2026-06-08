@@ -180,26 +180,38 @@
     color: rgba(80, 0, 0, 0.4);
   }
 
-  /* Sun watermark top-right cream area */
-  .sun-watermark {
+  /* Logo watermark */
+  .logo-watermark {
     position: absolute;
-    top: 320px;
-    right: -40px;
-    width: 340px;
-    height: 340px;
-    opacity: 0.045;
+    top: 280px;
+    right: -60px;
+    width: 380px;
+    height: 380px;
+    opacity: 0.055;
     z-index: 1;
+    object-fit: contain;
   }
 
-  .sun-watermark svg { width: 100%; height: 100%; }
+  /* Logo top-left (maroon on cream) */
+  .logo-top {
+    position: absolute;
+    top: 58px;
+    right: 52px;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    opacity: 0.55;
+    z-index: 5;
+  }
 </style>
 </head>
 <body>
 
   <div class="accent-bar"></div>
 
-  <div class="section-label">Tech Spec · [ CAR NAME / SYSTEM ]</div>
+  <div class="section-label">Tech Spec · Eos — Car #12</div>
   <div class="team-tag">TAMU Solar · 2026</div>
+  <img class="logo-top" src="file:///home/user/tamusolar/assets/logo-maroon.png" alt="TAMU Solar">
 
   <div class="main-spec-number">[ NUM ]</div>
   <div class="main-spec-unit">[ UNIT ]<br><span style="font-size:28px;font-weight:300;color:#888;">[ sub unit ]</span></div>
@@ -225,19 +237,9 @@
     </div>
   </div>
 
-  <div class="sun-watermark">
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="42" fill="black"/>
-      <line x1="100" y1="10" x2="100" y2="40" stroke="black" stroke-width="8" stroke-linecap="round"/>
-      <line x1="100" y1="160" x2="100" y2="190" stroke="black" stroke-width="8" stroke-linecap="round"/>
-      <line x1="10" y1="100" x2="40" y2="100" stroke="black" stroke-width="8" stroke-linecap="round"/>
-      <line x1="160" y1="100" x2="190" y2="100" stroke="black" stroke-width="8" stroke-linecap="round"/>
-      <line x1="29" y1="29" x2="50" y2="50" stroke="black" stroke-width="8" stroke-linecap="round"/>
-      <line x1="150" y1="150" x2="171" y2="171" stroke="black" stroke-width="8" stroke-linecap="round"/>
-      <line x1="171" y1="29" x2="150" y2="50" stroke="black" stroke-width="8" stroke-linecap="round"/>
-      <line x1="29" y1="171" x2="50" y2="150" stroke="black" stroke-width="8" stroke-linecap="round"/>
-    </svg>
-  </div>
+  <img class="logo-watermark" src="file:///home/user/tamusolar/assets/logo-maroon.png" alt="">
+
+  <!-- CAPTION: Eos. Car #12. The numbers don't lie. ☀️ [SPEC NAME] · #TAMUSolar #GigEm #FSGP2026 -->
 
 </body>
 </html>

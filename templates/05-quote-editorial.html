@@ -166,26 +166,38 @@
     color: rgba(252, 243, 236, 0.28);
   }
 
-  /* Sun watermark */
-  .sun-watermark {
+  /* Logo watermark */
+  .logo-watermark {
     position: absolute;
-    bottom: 260px;
+    bottom: 250px;
     right: -30px;
-    width: 260px;
-    height: 260px;
-    opacity: 0.05;
+    width: 280px;
+    height: 280px;
+    opacity: 0.06;
     z-index: 1;
+    object-fit: contain;
   }
 
-  .sun-watermark svg { width: 100%; height: 100%; }
+  /* Logo top-right */
+  .logo-top {
+    position: absolute;
+    top: 62px;
+    right: 52px;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    opacity: 0.5;
+    z-index: 8;
+  }
 </style>
 </head>
 <body>
 
   <div class="accent-bar"></div>
 
-  <div class="editorial-tag">Team Voice · 2026</div>
+  <div class="editorial-tag">Team Voice · Eos #12 · 2026</div>
   <div class="team-tag">TAMU Solar</div>
+  <img class="logo-top" src="file:///home/user/tamusolar/assets/logo-white.png" alt="TAMU Solar">
 
   <div class="quote-mark">"</div>
 
@@ -204,19 +216,9 @@
     <span class="photo-label">[ PHOTO — candid, action, or detail shot ]</span>
   </div>
 
-  <div class="sun-watermark">
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="42" fill="white"/>
-      <line x1="100" y1="10" x2="100" y2="40" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="100" y1="160" x2="100" y2="190" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="10" y1="100" x2="40" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="160" y1="100" x2="190" y2="100" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="29" y1="29" x2="50" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="150" y1="150" x2="171" y2="171" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="171" y1="29" x2="150" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
-      <line x1="29" y1="171" x2="50" y2="150" stroke="white" stroke-width="8" stroke-linecap="round"/>
-    </svg>
-  </div>
+  <img class="logo-watermark" src="file:///home/user/tamusolar/assets/logo-white.png" alt="">
+
+  <!-- CAPTION: In their own words. ☀️ [NAME] on building Eos. #TAMUSolar #GigEm -->
 
 </body>
 </html>
